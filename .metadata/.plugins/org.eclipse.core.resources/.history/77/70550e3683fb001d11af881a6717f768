@@ -1,0 +1,11 @@
+package edu.kh.jdbc.view;
+
+
+// View : 입력, 출력을 담당하는 클래스
+// - 사용자 담당 인터페이스 요소로 사용자의 요청과 응답을 보여주는 화면
+
+public class EmployeeView {
+	
+	private 
+	
+}

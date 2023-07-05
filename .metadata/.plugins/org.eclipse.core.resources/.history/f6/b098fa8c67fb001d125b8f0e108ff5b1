@@ -1,0 +1,12 @@
+package edu.kh.jdbc.ex1;
+
+public class JDBCExample1 {
+
+	public static void main(String[] args) {
+		// JDBC : java가 DB와 연결할 수 있게 해 주는 java API
+		
+		// [1단계] : JDBC 객체 참조 변수 선언
+		
+	}
+	
+}

@@ -1,0 +1,15 @@
+package edu.kh.jdbc.model.dao;
+
+import java.util.List;
+
+import edu.kh.jdbc.model.vo.Employee;
+
+// DAO(Data Access Object) : 데이터 접근 객체
+// - DB와 연결되어 SQL을 수행하고 결과를 반환 받는 역할
+public class EmployeeDAO {
+
+	public List<Employee> selectAll() {
+		return null;
+	}
+
+}

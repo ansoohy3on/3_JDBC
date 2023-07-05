@@ -1,0 +1,38 @@
+package edu.kh.jdbc.view;
+
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+// View : 입력, 출력을 담당하는 클래스
+// - 사용자 담당 인터페이스 요소로 사용자의 요청과 응답을 보여주는 화면
+
+public class EmployeeView {
+	
+	private Scanner sc = new Scanner(System.in);
+	
+	
+	/*
+	 * 메인 메뉴
+	 * 
+	 * */
+	public void displayMenu() {
+		
+		int menuNum = 0;
+		
+		do {
+			try {
+				
+			}catch(InputMismatchException e) {
+				System.out.println("입력 형식이 잘못되었습니다. 다시 시도 해주세요.");
+			}
+			
+			
+			
+			
+		}while(menuNum != 0);
+		
+		
+		
+	}
+	
+}

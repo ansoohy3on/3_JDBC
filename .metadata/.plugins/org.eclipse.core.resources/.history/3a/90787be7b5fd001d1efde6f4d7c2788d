@@ -1,0 +1,92 @@
+package edu.kh.jdbc.ex1;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class JDBCExample2 {
+	
+	public static void main(String[] args) {
+		
+		Connection conn = null;
+		
+		Statement stmt = null;
+		
+		ResultSet rs = null;
+		
+		try {
+			
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			
+			String type = "jdbc:oracle:thin:@";
+			
+			String ip = "localhost";
+			
+			String port = ":1521";
+			
+			String sid = ":xe";
+			
+			String user = "HSN";
+			
+			String pw = "hsn1234";
+			
+			conn = DriverManager.getConnection(type + ip + port + sid, user, pw );
+			
+			System.out.println(conn);
+			
+			String sql = "SELECT EMP_ID, EMP_NAME, SALARY, DEPT_CODE FROM EMPLOYEE ORDER BY EMP_NAME";
+			
+			stmt = conn.createStatement();
+			
+			rs = stmt.executeQuery(sql);
+			
+			while(rs.next()) {
+				
+				int empId = rs.getInt("EMP_ID");
+				String empName = rs.getString("EMP_NAME");
+				int salary = rs.getInt("SALARY");
+				String deptCode =rs.getString("DEPT_CODE");
+				
+				System.out.printf("사번 : %d 이름 : %s 급여: %7d 부서코드 : %s\n", empId, empName, salary,deptCode);
+			}
+			
+			String a = "SELECT SUM(SALARY) FROM EMPLOYEE";
+			
+			stmt = conn.createStatement();
+			
+			rs = stmt.executeQuery(a);
+			
+			
+			while(rs.next()) {
+				
+				int sumSalary = rs.getInt("SUM(SALARY)");
+				
+				System.out.printf("합계 : %d\n", sumSalary);
+			}
+			
+			
+		}catch(SQLException e) {
+			e.printStackTrace();
+			
+		}catch(ClassNotFoundException e) {
+			System.out.println("OJDBC 라이브러리 미등록 또는 경로 오타");
+			e.printStackTrace();
+			
+		}finally {
+			
+			try {
+				if(rs != null) rs.close();
+				if(stmt != null) stmt.close();
+				if( conn != null) conn.close();
+				
+				
+			}catch(SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		
+	}
+
+}

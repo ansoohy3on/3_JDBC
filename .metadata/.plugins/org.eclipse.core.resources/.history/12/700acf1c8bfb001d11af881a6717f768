@@ -1,0 +1,75 @@
+package edu.kh.jdbc.model.dao;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.List;
+
+import edu.kh.jdbc.model.vo.Employee;
+
+// DAO(Data Access Object) : 데이터 접근 객체
+// - DB와 연결되어 SQL을 수행하고 결과를 반환 받는 역할
+public class EmployeeDAO {
+	
+	// JDBC 객체 저장용 참조 변수 필드 선언
+	private Connection conn;
+	// DB 연결 정보를 담은 객체(Java = DB사이의 통로 역할)
+	
+	private Statement stmt;
+	// Connection을 통해 SQL을 수행하고 결과를 반환 받는 객체
+	
+	private ResultSet rs;
+	// SELECT 수행 후 반환되는 객체
+	
+
+	/**
+	 * 전체 사원 정보 조회 DAO
+	 * @return
+	 */
+	public List<Employee> selectAll() {
+		
+		
+		try {
+			// 1) Oracle JDBC Driver 메모리 로드
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			
+			
+			// 2) DB 연결 작업(Connection 얻어오기)
+			String type = "jdbc:oracle:thin:@"; // JDBC드라이버가 thin 타입
+						
+			String ip = "localhost";
+			String port = ":1521";
+			String sid = ":xe"; // DB 이름
+			String user = "hsn"; // 사용자 명
+			String pw = "hsn1234"; // 비밀번호
+			conn = DriverManager.getConnection(type + ip + port + sid, user, pw );
+			// DriverManager : Connection 생성 메소드 제공
+			
+			
+			// 3) 수행할 SQL 작성
+			
+			// 4) Statement 객체 생성
+			
+			// 5) SQL 수행 후 결과(ResultSet) 반환 받기
+			
+			// 6) 결과를 List에 옮겨 담기
+			
+		}catch(Exception e) {
+			// Exception : 모든 예외의 최상위 부모
+			// -> try에서 발생하는 모든 예외를 잡아서 처리
+			e.printStackTrace();
+			
+		}
+		
+		
+		// 7) 사용한 JDBC 자원 반환(close)
+		
+		// 8) List 호출부로 반환
+		
+		
+		
+		return null;
+	}
+
+}
