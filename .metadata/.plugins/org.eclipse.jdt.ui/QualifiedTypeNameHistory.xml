@@ -9,7 +9,6 @@
     <fullyQualifiedTypeName name="java.sql.SQLException"/>
     <fullyQualifiedTypeName name="java.util.PropertyPermission"/>
     <fullyQualifiedTypeName name="oracle.jdbc.proxy.annotation.GetProxy"/>
-    <fullyQualifiedTypeName name="java.sql.DriverManager"/>
     <fullyQualifiedTypeName name="edu.kh.jdbc.member.view.memberView"/>
     <fullyQualifiedTypeName name="edu.kh.jdbc.main.view.MainView"/>
     <fullyQualifiedTypeName name="edu.kh.jdbc.member.model.service.MemberService"/>
@@ -37,4 +36,5 @@
     <fullyQualifiedTypeName name="java.util.concurrent.ExecutionException"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="edu.kh.jdbc.board.model.vo.Board"/>
+    <fullyQualifiedTypeName name="java.sql.DriverManager"/>
 </qualifiedTypeNameHistroy>
